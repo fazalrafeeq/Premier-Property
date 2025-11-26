@@ -83,20 +83,20 @@ export default function HeroSection() {
           <div className="mt-6 flex flex-col md:flex-row items-center gap-4">
 
             {/* Dropdown */}
-            <div className="flex items-center gap-2 w-43 md:w-40 px-4 py-3 ">
-              <span className="font-semibold items-start text-gray-600 ">All Residential</span>
+            <div className="flex items-center gap-2  py-3 ">
+              <span className="font-semibold text-2xl md:text-xl items-start text-gray-600 ">All Residential</span>
               <FiChevronDown className="text-gray-600" size={20} />
-              
+              <hr className=" hidden lg:block w-20 text-gray-200 rotate-90 mb-3 " />
             </div>
            
 
             {/* Search */}
-            <div className="flex items-center gap-3  py-3 rounded-xl w-35 md:flex-1">
-              <FiSearch size={20} className="text-gray-500 " />
+            <div className="flex items-center gap-3 border-4 md:border-0 px-3 md:px-0 py-3 rounded-xl  md:flex-1">
+              <FiSearch size={22} className="text-gray-500 " />
               <input
                 type="text"
                 placeholder='Search "Kochi"'
-                className="w-full  text-gray-700" 
+                className="w-full text-2xl md:text-xl text-gray-700" 
               />
             </div>
 
