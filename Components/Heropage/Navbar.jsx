@@ -19,8 +19,8 @@ export default function Navbar() {
     <div className="w-full bg-white py-4 shadow-sm">
       <div
         className="
-        relative w-full max-w-[1400px] mx-auto 
-        px-3 md:px-3 lg:px-5 
+        relative w-full max-w-[2400px] mx-auto 
+        px-3 md:px-3 lg:px-6 
         flex items-center justify-between
       "
       >

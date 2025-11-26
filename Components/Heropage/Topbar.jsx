@@ -25,7 +25,7 @@ export default function Topbar() {
       ></div>
 
       {/* Content */}
-      <div className="relative w-full max-w-[1400px] mx-auto px-3 lg:px-5 md:px-5 flex items-center justify-between">
+      <div className="relative w-full max-w-[2400px] mx-auto px-3 lg:px-6 md:px-5 flex items-center justify-between">
         {/* LEFT TEXT */}
         <h1 className="text-sm md:text-base font-medium whitespace-nowrap">
           Welcome to Premium Property Exports
