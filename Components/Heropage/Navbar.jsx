@@ -5,7 +5,7 @@ import { IoChevronDown, IoClose } from "react-icons/io5";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 
-export default function Navbar() {
+export default function Navbar() { 
   const [open, setOpen] = useState(false);
 
   const menuItems = ["Home", "About Us", "Services", "Contact Us"];
@@ -20,7 +20,7 @@ export default function Navbar() {
       <div
         className="
         relative w-full max-w-[2400px] mx-auto 
-        px-3 md:px-3 lg:px-6 
+        px-3 md:px-4 lg:px-18 
         flex items-center justify-between
       "
       >

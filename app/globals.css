@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@keyframes slide {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

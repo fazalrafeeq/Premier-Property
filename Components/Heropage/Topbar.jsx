@@ -18,14 +18,14 @@ export default function Topbar() {
         items-center
       "
     >
-      {/* Background Pattern Layer */}
+      {/* Background Pattern Layer  */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{ backgroundImage: "url('/image/topbar-bg.png')" }}
       ></div>
 
       {/* Content */}
-      <div className="relative w-full max-w-[2400px] mx-auto px-3 lg:px-6 md:px-5 flex items-center justify-between">
+      <div className="relative w-full max-w-[2400px] mx-auto px-3 lg:px-18 md:px-4 flex items-center justify-between">
         {/* LEFT TEXT */}
         <h1 className="text-sm md:text-base font-medium whitespace-nowrap">
           Welcome to Premium Property Exports
