@@ -40,8 +40,8 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[px]"></div>
 
         {/* TEXT */}
-        <div className="relative z-20 px-6 md:px-6 lg:px-22 top-28  text-white max-w-5xl">
-          <h1 className="text-1xl sm:text-2xl md:text-[44px] font-bold leading-tight drop-shadow-lg">
+        <div className="relative z-20 px-6 md:px-6 lg:px-22 top-28  text-white max-w-7xl">
+          <h1 className="text-2xl sm:text-2xl md:text-[44px] font-bold leading-tight drop-shadow-lg">
             Where Premium Properties
             <br />
             Meet Perfect Opportunities
@@ -68,7 +68,7 @@ export default function HeroSection() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className="relative font-semibold text-gray-700 whitespace-nowrap"
+                className="relative text-1xl md:text-xl font-semibold text-gray-700 whitespace-nowrap"
               >
                 {tab}
 
@@ -84,7 +84,7 @@ export default function HeroSection() {
 
             {/* Dropdown */}
             <div className="flex items-center gap-2  py-3 ">
-              <span className="font-semibold text-2xl md:text-xl items-start text-gray-600 ">All Residential</span>
+              <span className="font-semibold text-1xl md:text-xl items-start text-gray-600 ">All Residential</span>
               <FiChevronDown className="text-gray-600" size={20} />
               <hr className=" hidden lg:block w-20 text-gray-200 rotate-90 mb-3 " />
             </div>
@@ -96,7 +96,7 @@ export default function HeroSection() {
               <input
                 type="text"
                 placeholder='Search "Kochi"'
-                className="w-full text-2xl md:text-xl text-gray-700" 
+                className="w-full text-1xl md:text-xl text-gray-700" 
               />
             </div>
 
