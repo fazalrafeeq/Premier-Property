@@ -35,7 +35,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full max-w-[2700px] bg-white mx-auto">
+    <div className="relative w-full max-w-[2790px] bg-white mx-auto">
 
       {/* HERO SLIDER */}
       <div className="relative h-[75vh] w-full overflow-hidden">
@@ -51,7 +51,7 @@ export default function HeroSection() {
 
         {/* TEXT */}
         <div className="relative z-20 px-6 lg:px-22 top-28 text-white max-w-7xl">
-          <h1 className="text-2xl md:text-[44px] lg:text-[58px] font-bold leading-tight">
+          <h1 className="text-2xl md:text-[34px] lg:text-[44px] font-bold leading-tight">
             Where Premium Properties
             <br />
             Meet Perfect Opportunities
@@ -141,7 +141,7 @@ export default function HeroSection() {
             {/* SEARCH BAR (Mobile background only) */}
             <div className="
               flex items-center gap-3 w-full md:flex-1 
-              px-0 py-3 rounded-xl 
+              px-2 py-3 rounded-xl 
               bg-gray-100 md:bg-transparent
             ">
               <FiSearch size={22} className="text-gray-500" />
