@@ -10,20 +10,23 @@ export default function Navbar() {
 
   const menuItems = ["Home", "About Us", "Services", "Contact Us"];
 
-  // Close menu after clicking a mobile item
   const handleMenuClick = () => {
     setOpen(false);
   };
 
   return (
-    <div className="w-full bg-white py-4 shadow-sm">
+    <div className="w-full bg-white shadow-sm relative z-50">
+      
+      {/* Navbar Container */}
       <div
         className="
-        relative w-full max-w-[2400px] mx-auto 
-        px-3 md:px-4 lg:px-18 
-        flex items-center justify-between
-      "
+          relative w-full max-w-[2400px] mx-auto 
+          px-3 md:px-4 lg:px-18 
+          flex items-center justify-between
+          h-[80px]
+        "
       >
+        
         {/* Logo */}
         <img src="/image/Navbar-bg.png" alt="Logo" className="w-28" />
 
@@ -35,7 +38,7 @@ export default function Navbar() {
               className="
                 px-5 py-2 rounded-md font-medium text-black 
                 hover:bg-[#2E7361] hover:text-white
-                transition-all duration-200
+                transition-all duration-200 text-xs lg:text-xl 
               "
             >
               {item}
@@ -51,52 +54,52 @@ export default function Navbar() {
               <FiPhoneCall size={20} />
             </div>
             <div>
-              <p className="font-medium text-black text-sm">Call Us Now</p>
+              <p className="font-medium text-black lg:text-xl text-sm">Call Us Now</p>
               <p className="text-xs text-gray-500">Ph No:+91 0000000000</p>
             </div>
           </div>
         </div>
 
-        {/* -------- Mobile Menu Icon (Toggle) -------- */}
+        {/* -------- Mobile Menu Icon -------- */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-black pt-5 rounded-lg active:bg-gray-100"
+          className="md:hidden text-black relative z-50"
         >
           {open ? (
-            <IoClose size={40} className="text-black" />
+            <IoClose size={40} />
           ) : (
-            <HiOutlineBars3BottomRight size={38} className="text-black" />
+            <HiOutlineBars3BottomRight size={38} />
           )}
         </button>
       </div>
 
       {/* -------- Mobile Dropdown -------- */}
       {open && (
-        <div className="md:hidden bg-white shadow-md px-4 py-4 space-y-3">
+        <div className="
+          md:hidden 
+          absolute top-[80px] left-0 w-full 
+          bg-white shadow-xl 
+          z-40
+          px-4 py-4 space-y-3
+        ">
           {menuItems.map((item) => (
             <p
               key={item}
               onClick={handleMenuClick}
               className="
-                py-2 text-black font-medium border-b px-2 rounded-md
+                py-2 text-black font-medium border-b px-3 rounded-md
 
-                /* mobile green effect */
-                hover:bg-[#2E7361] hover:text-white
-                active:bg-[#2E7361] active:text-white
-                focus:bg-[#2E7361] focus:text-white
+                hover:bg-[#2E7361]/10 hover:text-[#2E7361]
+                active:bg-[#2E7361]/20 active:text-[#2E7361]
 
-                /* disable on desktop */
-                md:hover:bg-transparent md:hover:text-black
-                md:active:bg-transparent md:active:text-black
-
-                transition-all duration-150
+                transition-all duration-200
               "
             >
               {item}
             </p>
           ))}
 
-          {/* Phone section (mobile only) */}
+          {/* Phone Section */}
           <div className="flex items-center gap-3 pt-3">
             <div className="bg-[#2E7361] text-white p-2 rounded-md">
               <FiPhoneCall size={20} />
