@@ -1,69 +1,69 @@
 export default function About() {
   return (
     <section className="w-full flex justify-center bg-white">
-      <div className="w-full max-w-[2000px] px-8 md:px-20 lg:px-28 xl:px-36 py-16">
+      <div className="w-full max-w-[2200px] px-8 md:px-16 lg:px-24 xl:px-28 py-20">
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="flex flex-col justify-center">
-            <p className="text-xl md:text-2xl font-semibold text-gray-500">
+          <div>
+            <p className="text-lg md:text-xl font-semibold text-gray-500 tracking-wide">
               ABOUT US
             </p>
 
-            {/* FIXED TEXT SIZE FOR XL SCREENS */}
-            <h1 className="text-3xl md:text-4xl xl:text-5xl text-black font-bold leading-tight mt-2">
+            <h1 className="text-4xl md:text-5xl xl:text-[55px] text-black font-bold leading-tight mt-3">
               Explore Real Estate In Popular Indian Cities
             </h1>
 
-            <p className="mt-5 text-gray-600 max-w-3xl text-sm md:text-[15px] leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p className="mt-6 text-gray-600 text-[16px] leading-relaxed max-w-2xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor.
             </p>
 
+            {/* ICONS UNDER TEXT */}
             <div className="grid sm:grid-cols-2 gap-10 mt-10">
+              {/* Item 1 */}
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="w-5 h-5">
-                    <img src="/image/abt-icon-1.png" alt="icon 1" />
-                  </span>
-                  <h3 className="font-semibold text-black text-xl">
-                    Best Solutions
-                  </h3>
+                <div className="flex items-center gap-3">
+                  <img src="/image/abt-icon-1.png" className="w-6 h-6" />
+                  <h3 className="font-semibold text-black text-xl">Best Solutions</h3>
                 </div>
-                <p className="text-gray-600 mt-5 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+                <p className="text-gray-600 mt-3 text-[15px] leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
 
+              {/* Item 2 */}
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6">
-                    <img src="/image/abt-icon-2.png" alt="icon 2" />
-                  </span>
-                  <h3 className="font-semibold text-black text-xl">
-                    Quality Service
-                  </h3>
+                <div className="flex items-center gap-3">
+                  <img src="/image/abt-icon-2.png" className="w-6 h-6" />
+                  <h3 className="font-semibold text-black text-xl">Quality Service</h3>
                 </div>
-                <p className="text-gray-600 mt-5 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+                <p className="text-gray-600 mt-3 text-[15px] leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
             </div>
 
-            {/* LEFT SIDE BUTTON ONLY */}
-            <div><button className="mt-10 bg-green-900 hover:bg-green-600 transition text-white px-7 py-3 rounded-lg">
+            {/* BUTTON */}
+            <button
+              className="
+                mt-10 bg-green-800 text-white 
+                px-10 py-3 
+                rounded-md shadow 
+                transition-all duration-200
+                active:scale-95 
+                hover:bg-green-600
+              "
+            >
               More About Us →
-            </button></div>
+            </button>
           </div>
 
-          {/* RIGHT IMAGE WITH RESPONSIVE FIX */}
-          <div className="relative w-full flex">
+          {/* RIGHT IMAGE */}
+          <div className="relative w-full">
             <img
               src="/image/abt-cleaner.png"
               alt="Cleaning worker"
@@ -71,23 +71,21 @@ export default function About() {
                 w-full 
                 rounded-2xl 
                 object-cover
-                min-h-[300px]
-                sm:min-h-[350px]
-                md:min-h-[400px]
+                min-h-[350px]
+                sm:min-h-[400px]
+                md:min-h-[450px]
                 lg:min-h-[480px]
-                xl:min-h-[530px]
-                2xl:min-h-[600px]
+                xl:min-h-[500px]
               "
             />
 
-            {/* CONTACT BADGE RESPONSIVE */}
+            {/* CONTACT BADGE */}
             <div
               className="
                 absolute bottom-0 right-0
-                w-[150px] sm:w-[240px] md:w-[260px]
+                w-[160px] sm:w-[230px] md:w-[260px]
                 rounded-xl
-                overflow-hidden
-                shadow-lg
+                overflow-hidden shadow-xl
               "
             >
               <img
