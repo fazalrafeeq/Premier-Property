@@ -44,7 +44,7 @@ export default function ServicesSection() {
     <section className="w-full bg-white py-20">
 
       {/* HEADER */}
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1350px] mx-auto px-8">
         <div className="grid md:grid-cols-2 gap-8 items-center">
 
           <div>
@@ -67,7 +67,7 @@ export default function ServicesSection() {
       </div>
 
       {/* SLIDER */}
-      <div className="relative max-w-[1200px] mx-auto px-6 mt-16">
+      <div className="relative max-w-[1350px] mx-auto px-6 mt-16">
 
         {/* BACK BUTTON */}
         <button

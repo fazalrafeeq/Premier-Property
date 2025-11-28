@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export default function CleaningSection() {
   const stats = [
-    { number: "208K", label: "Lorem Ipsum is simply" },
-    { number: "208K", label: "Lorem Ipsum is simply" },
-    { number: "4.8", label: "Lorem Ipsum is simply", stars: true },
-    { number: "208K", label: "Lorem Ipsum is simply" },
-    { number: "208K", label: "Lorem Ipsum is simply" },
+    { number: "208K", label: "Lorem " },
+    { number: "208K", label: "Lorem " },
+    { number: "4.8", label: "Lorem ", stars: true },
+    { number: "208K", label: "Lorem " },
+    { number: "208K", label: "Lorem " },
   ];
 
   return (
-    <section className="w-full  bg-white md:py-10  py-5 px-8 md:px-30">
+    <section className="w-full  bg-white md:py-10  py-5 px-4 md:px-30">
       <div className="max-w-[1900px] mx-auto text-center">
 
         {/* TITLE */}
@@ -22,7 +22,7 @@ export default function CleaningSection() {
           Clean Together
         </h3>
 
-        <p className="text-gray-500 text-xs md:text-sm font-light mt-7 max-w-xl mx-auto">
+        <p className="text-gray-500 text-xs md:text-xm font-light mt-7 max-w-xl mx-auto">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever.
         </p>
@@ -44,8 +44,8 @@ export default function CleaningSection() {
         <div className="mt-16">
 
           <div className="
-            grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5  
-            gap-8 items-center justify-center text-center 
+            grid grid-cols-5 sm:grid-cols-5 md:grid-cols-5  
+            md:gap-8 gap- items-center justify-center text-center 
 
           ">
             {stats.map((item, i) => (
@@ -54,13 +54,13 @@ export default function CleaningSection() {
                 className="flex flex-col items-center justify-center "
               >
                 {/* NUMBER */}
-                <h3 className="md:text-2xl  text-1xl font-bold text-black">
+                <h3 className="md:text-2xl lg:text-4xl  text-xs font-semibold text-black">
                   {item.number}
                 </h3>
 
                 {/* STARS - CENTER FIXED */}
                 {item.stars && (
-                  <div className="flex justify-center gap-1 my-1 text-green-600 text-sm">
+                  <div className="flex justify-center md:gap-4 my-1 text-green-600 text-xs">
                     ★ ★ ★ ★ ★
                   </div>
                 )}
@@ -109,7 +109,7 @@ function ImageBlock({ src }) {
         />
       </div>
 
-      <p className="mt-4 text-gray-600 text-sm leading-relaxed text-left">
+      <p className="mt-4 text-gray-600 text-xs leading-relaxed text-left">
        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
       </p>
     </div>
