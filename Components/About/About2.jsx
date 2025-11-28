@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function About2() {
   const [active, setActive] = useState(null);
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   const cards = [
     { id: 1, title: "Quality Service", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", icon: "/image/feat-1.png" },
@@ -10,24 +12,49 @@ export default function About2() {
     { id: 3, title: "24/7 Availability", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", icon: "/image/feat-3.png" }
   ];
 
-  return (
-    <section className="w-full flex justify-center bg-transparent -mt-10 pb-20">
-      <div className="grid md:grid-cols-3 gap-6 w-full max-w-[2000px] px-6 md:px-2 lg:px-20">
+  // ✅ Scroll trigger
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-        {cards.map((card) => {
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="w-full flex justify-center bg-[#0F362C] pb-0"
+    >
+      <div className="grid md:grid-cols-3 gap-6 w-full max-w-[2000px] px-6 -mt-15 md:px-2 lg:px-26">
+
+        {cards.map((card, i) => {
           const isActive = active === card.id;
 
           return (
             <div
               key={card.id}
-              onMouseEnter={() => setActive(card.id)}   // desktop hover
-              onMouseLeave={() => setActive(null)}     // desktop unhover
-              onTouchStart={() => setActive(card.id)}  // mobile tap
+              onMouseEnter={() => setActive(card.id)}
+              onMouseLeave={() => setActive(null)}
+              onTouchStart={() => setActive(card.id)}
+              style={{ transitionDelay: `${i * 0.2}s` }}
               className={`
-                relative py-5 pl-20 shadow-7xl
+                relative py-5 pl-20 
                 rounded-2xl flex gap-4 cursor-pointer 
-                transition-all duration-300
-                ${isActive ? "bg-green-900" : "bg-white"}
+                shadow-2xl
+                transition-all duration-700 ease-out
+                ${visible 
+                  ? "opacity-100 scale-100" 
+                  : "opacity-0 scale-75"}
+                ${isActive ? "bg-[#2D7462]" : "bg-white"}
               `}
             >
 
@@ -35,9 +62,9 @@ export default function About2() {
               <div
                 className={`
                   absolute top-0 left-0
-                  w-18 h-15 rounded-br-xl rounded-tl-xl
+                  w-18 h-15 rounded-br-xl rounded-tl-xl 
                   flex justify-center items-center transition-all duration-300
-                  ${isActive ? "bg-white" : "bg-green-900"}
+                  ${isActive ? "bg-white" : "bg-[#2D7462]"}
                 `}
               >
                 <img
@@ -53,7 +80,7 @@ export default function About2() {
               <div>
                 <h3
                   className={`
-                    font-semibold text-lg transition-all duration-300
+                    font-semibold text-xm lg:text-lg transition-all duration-300
                     ${isActive ? "text-white" : "text-black"}
                   `}
                 >
@@ -62,7 +89,7 @@ export default function About2() {
 
                 <p
                   className={`
-                    mt-2 text-sm leading-relaxed transition-all duration-300
+                    mt-2 lg:text-xm text-xs leading-relaxed transition-all duration-300
                     ${isActive ? "text-white/80" : "text-gray-600"}
                   `}
                 >

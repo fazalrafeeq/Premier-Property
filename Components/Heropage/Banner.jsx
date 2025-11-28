@@ -166,7 +166,7 @@ export default function HeroSection() {
             <button
               onClick={handleGetStarted}
               className="
-                bg-green-600 text-white 
+                bg-[#2D7462] text-white 
                 px-6 py-3 
                 rounded-md shadow 
                 transition-all duration-200
