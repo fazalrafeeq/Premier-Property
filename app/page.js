@@ -1,5 +1,6 @@
 import About from "@/Components/About/About";
 import About2 from "@/Components/About/About2";
+import CleaningSection from "@/Components/About/Cleaningsection";
 import ServicesSlider from "@/Components/About/Serivicesslider";
 import Stats from "@/Components/About/statscard";
 import BannerSection from "@/Components/Heropage/Banner";
@@ -17,6 +18,7 @@ export default function Home() {
       <About2/>
       <Stats/>
       <ServicesSlider/>
+      <CleaningSection/>
     </div>
   );
 }
