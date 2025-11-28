@@ -14,26 +14,24 @@ export default function Stats() {
     { value: 20, label: "Professional Team", icon: "/image/stat-4.png" }
   ];
 
-  // ✅ Detect when section comes into view
+  // 🔥 Detect when section enters viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect(); // only once
+          observer.disconnect();
         }
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
   }, []);
 
-  // ✅ Count animation starts only when visible
+  // 🔥 Count animation when visible
   useEffect(() => {
     if (!visible) return;
 
@@ -45,15 +43,16 @@ export default function Stats() {
 
       const counter = setInterval(() => {
         start += increment;
+
         if (start >= end) {
           start = end;
           clearInterval(counter);
         }
 
         setCounts((prev) => {
-          const newCounts = [...prev];
-          newCounts[index] = start;
-          return newCounts;
+          const updated = [...prev];
+          updated[index] = start;
+          return updated;
         });
       }, 20);
     });
@@ -66,7 +65,7 @@ export default function Stats() {
     >
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* ✅ Responsive Grid */}
+        {/* Stats Grid */}
         <div className="
           grid grid-cols-2 
           lg:grid-cols-4 
@@ -76,26 +75,29 @@ export default function Stats() {
           {stats.map((item, i) => (
             <div
               key={i}
+              style={{ animationDelay: `${i * 0.2}s` }}
               className={`
                 flex flex-col items-center justify-center
                 transition-all duration-500
                 ${visible ? "opacity-100 animate-fadeUp" : "opacity-0"}
                 hover:scale-110
               `}
-              style={{ animationDelay: `${i * 0.2}s` }}
             >
+              {/* Icon */}
               <Image
                 src={item.icon}
                 alt={item.label}
                 width={48}
                 height={48}
-                className="mb-4 md:w-10 w-5"
+                className="mb-4 w-5 md:w-10"
               />
 
-              <p className="md:text-2xl text-1xl font-bold text-white">
+              {/* Number */}
+              <p className="text-lg md:text-2xl font-bold text-white">
                 {counts[i]}+
               </p>
 
+              {/* Label */}
               <p className="text-xs md:text-sm text-gray-400 mt-1 whitespace-nowrap">
                 {item.label}
               </p>
@@ -105,7 +107,7 @@ export default function Stats() {
 
       </div>
 
-      {/* ✅ Animation */}
+      {/* Animation */}
       <style jsx>{`
         @keyframes fadeUp {
           from {
