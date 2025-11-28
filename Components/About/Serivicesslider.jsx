@@ -16,8 +16,8 @@ export default function ServicesSection() {
 
   const [index, setIndex] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
+  const [activeCard, setActiveCard] = useState(null);
 
-  // ✅ Responsive card count
   useEffect(() => {
     const updateCards = () => {
       if (window.innerWidth < 768) setCardsPerSlide(1);
@@ -32,7 +32,6 @@ export default function ServicesSection() {
 
   const totalSlides = Math.ceil(services.length / cardsPerSlide);
 
-  // ✅ Button movement
   const next = () => {
     if (index < totalSlides - 1) setIndex(index + 1);
   };
@@ -45,10 +44,11 @@ export default function ServicesSection() {
     <section className="w-full bg-white py-20">
 
       {/* HEADER */}
-      <div className="max-w-7xl mx-auto px-10 md:px-10">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+
           <div>
-            <p className="md:text-xl text:sm uppercase tracking-widest text-gray-500 font-semibold">
+            <p className="text-sm md:text-lg uppercase tracking-widest text-gray-500 font-semibold">
               OUR SERVICES
             </p>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold text-black">
@@ -57,11 +57,12 @@ export default function ServicesSection() {
           </div>
 
           <div>
-            <p className="text-gray-600 text-xs md:text-xm ">
+            <p className="text-gray-600 text-sm md:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,  
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
+
         </div>
       </div>
 
@@ -72,7 +73,7 @@ export default function ServicesSection() {
         <button
           onClick={prev}
           disabled={index === 0}
-          className="absolute z-90 left-3 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
         >
           <FiChevronLeft size={22} className="text-gray-400" />
         </button>
@@ -81,73 +82,104 @@ export default function ServicesSection() {
         <button
           onClick={next}
           disabled={index === totalSlides - 1}
-          className="absolute right-3 top-1/2 z-90 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
         >
           <FiChevronRight size={22} className="text-[#2D7462]" />
         </button>
 
-        {/* TRACK */}
-        <div className="overflow-hidden">
+        {/* SLIDER CONTAINER */}
+        <div className="overflow-hidden py-8">
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${index * 100}%)`,
-            }}
+            style={{ transform: `translateX(-${index * 100}%)` }}
           >
 
-            {services.map((item, i) => (
-              <div
-                key={i}
-                className="min-w-full md:min-w-[70%] lg:min-w-[33.333%] px-4"
-              >
+            {services.map((item, i) => {
+              const isActive = activeCard === i;
 
-                {/* CARD */}
-                <div className="h-full flex flex-col justify-between bg-white p-8 rounded-2xl shadow-[0px_10px_25px_rgba(0,0,0,0.12)] hover:bg-[#2D7462] transition-all duration-300 group">
+              return (
+                <div
+                  key={i}
+                  className="min-w-full md:min-w-[70%] lg:min-w-[33.333%] px-5"
+                >
 
-                  {/* ICON */}
-                  <div className="w-14 h-14 mb-5">
-                    <Image
-                      src={item.icon}
-                      alt="icon"
-                      width={56}
-                      height={56}
-                      className="group-hover:invert group-hover:brightness-0 transition"
-                    />
-                  </div>
+                  {/* CARD */}
+                  <div
+                    onClick={() => setActiveCard(i)}
+                    className={`
+                      h-full flex flex-col justify-between 
+                      p-8 rounded-2xl cursor-pointer transition-all duration-300
+                      ${isActive ? "bg-[#2D7462]" : "bg-white"}
+                      hover:bg-[#2D7462] group
 
-                  {/* CONTENT */}
-                  <div>
-                    <h3 className="text-xm md:text-lg  font-bold text-black group-hover:text-white transition">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-3 md:text-sm  text-xs text-gray-600 group-hover:text-white/90 transition">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  {/* BUTTON */}
-                  <a 
-                    href="#" 
-                    className="mt-6 text-[#2D7462] text-xs md:text-base font-semibold group-hover:text-white transition"
+                      /* ✅ VISIBLE TOP + BOTTOM SHADOW */
+                      shadow-[0_12px_35px_rgba(0,0,0,0.15)]
+                      hover:shadow-[0_18px_50px_rgba(0,0,0,0.2)]
+                    `}
                   >
-                    Read More →
-                  </a>
-                </div>
 
-              </div>
-            ))}
+                    {/* ICON */}
+                    <div className="w-14 h-14 mb-5">
+                      <Image
+                        src={item.icon}
+                        alt="icon"
+                        width={56}
+                        height={56}
+                        className={`transition ${
+                          isActive
+                            ? "invert brightness-0"
+                            : "group-hover:invert group-hover:brightness-0"
+                        }`}
+                      />
+                    </div>
+
+                    {/* CONTENT */}
+                    <div>
+                      <h3 className={`text-lg font-bold transition ${
+                        isActive 
+                          ? "text-white" 
+                          : "text-black group-hover:text-white"
+                      }`}>
+                        {item.title}
+                      </h3>
+
+                      <p className={`mt-3 text-sm transition ${
+                        isActive 
+                          ? "text-white/90" 
+                          : "text-gray-600 group-hover:text-white/90"
+                      }`}>
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    {/* BUTTON */}
+                    <a 
+                      href="#"
+                      className={`mt-6 text-sm font-semibold transition ${
+                        isActive
+                          ? "text-white"
+                          : "text-[#2D7462] group-hover:text-white"
+                      }`}
+                    >
+                      Read More →
+                    </a>
+
+                  </div>
+
+                </div>
+              );
+            })}
 
           </div>
         </div>
 
-        {/* ✅ Responsive DOTS */}
-        <div className="flex justify-center mt-10 gap-3">
+        {/* DOTS */}
+        <div className="flex justify-center mt-8 gap-3">
           {Array.from({ length: totalSlides }).map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-3.5 h-3.5  rounded-full transition ${
+              className={`w-3.5 h-3.5 rounded-full transition ${
                 index === i ? "bg-[#2D7462]" : "bg-gray-300"
               }`}
             />
