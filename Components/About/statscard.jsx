@@ -14,7 +14,6 @@ export default function Stats() {
     { value: 20, label: "Professional Team", icon: "/image/stat-4.png" }
   ];
 
-  // 🔥 Detect when section enters viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,11 +26,9 @@ export default function Stats() {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => observer.disconnect();
   }, []);
 
-  // 🔥 Count animation when visible
   useEffect(() => {
     if (!visible) return;
 
@@ -59,19 +56,9 @@ export default function Stats() {
   }, [visible]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-[#0F362C] py-16"
-    >
+    <section ref={sectionRef} className="w-full bg-[#0F362C] py-16">
       <div className="max-w-7xl mx-auto px-6">
-
-        {/* Stats Grid */}
-        <div className="
-          grid grid-cols-2 
-          lg:grid-cols-4 
-          gap-10 
-          text-center
-        ">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
           {stats.map((item, i) => (
             <div
               key={i}
@@ -83,31 +70,20 @@ export default function Stats() {
                 hover:scale-110
               `}
             >
-              {/* Icon */}
-              <Image
-                src={item.icon}
-                alt={item.label}
-                width={48}
-                height={48}
-                className="mb-4 w-5 md:w-10"
-              />
+              <Image src={item.icon} alt={item.label} width={48} height={48} className="mb-4 w-5 md:w-10" />
 
-              {/* Number */}
               <p className="text-lg md:text-2xl font-bold text-white">
                 {counts[i]}+
               </p>
 
-              {/* Label */}
               <p className="text-xs md:text-sm text-gray-400 mt-1 whitespace-nowrap">
                 {item.label}
               </p>
             </div>
           ))}
         </div>
-
       </div>
 
-      {/* Animation */}
       <style jsx>{`
         @keyframes fadeUp {
           from {
