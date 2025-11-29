@@ -51,9 +51,9 @@ export default function FaqSection() {
 
         {/* RIGHT SIDE FAQ */}
         <div className="w-full">
-          <p className="text-sm text-gray-600 font-semibold">FAQ</p>
+          <p className="text-sm text-gray-700 font-semibold">FAQ</p>
 
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 leading-snug">
+          <h2 className=" text-xm sm:text-3xl md:text-4xl text-black font-bold mt-2 leading-snug">
             If You Want To Know <br /> Frequently Ask Questions
           </h2>
 
@@ -77,12 +77,12 @@ function FAQItem({ text, active }) {
   return (
     <div
       className="
-        w-full bg-white rounded-xl shadow-md 
+        w-full bg-white hover:bg-gray-200  rounded-xl shadow-md 
         px-6 py-5 flex items-center justify-between 
         hover:shadow-lg transition cursor-pointer
       "
     >
-      <p className="text-gray-700 font-medium">{text}</p>
+      <p className="text-black  font-medium">{text}</p>
 
       {/* Right Icon */}
       <div className="text-[#2D7462]">
