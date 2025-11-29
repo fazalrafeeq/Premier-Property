@@ -18,7 +18,7 @@ export default function GetInTouch() {
         relative 
         min-h-screen 
         
-        2xl:min-h-[70vh]
+        2xl:min-h-[30vh]
         w-full 
         py-20
         overflow-hidden

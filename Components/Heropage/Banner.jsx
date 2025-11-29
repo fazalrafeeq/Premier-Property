@@ -6,8 +6,8 @@ import { FiChevronDown, FiSearch, FiMic, FiTarget } from "react-icons/fi";
 
 const images = [
   "/image/banner-bg1.png",
-  "/image/banner-bg1.png",
-  "/image/banner-bg1.png"
+  "/image/banner-bg-2-1.png",
+  "/image/banner-bg-3-1.png",
 ];
 
 export default function HeroSection() {
@@ -38,16 +38,19 @@ export default function HeroSection() {
     <div className="relative w-full max-w-[2790px] bg-white mx-auto">
 
       {/* HERO SLIDER */}
-      <div className="relative h-[75vh] w-full overflow-hidden">
+      <div className="relative h-[60vh] md:h-[75vh] w-full overflow-hidden">
         <Image
           src={images[current]}
           fill
-          className="object-cover transition-all duration-700"
+          className="object-cover  transition-all duration-700 "
           alt="Banner"
           priority
         />
-
-        <div className="absolute inset-0 bg-black/50"></div>
+         <div className="absolute inset-0  bg-gradient-to-t
+      from-green-950/100
+      via-transparent
+      to-transparent  opacity-100  "></div>
+        <div className="absolute inset-0 bg-[#18473B]  opacity-60  "></div>
 
         {/* TEXT */}
         <div className="relative z-20 px-6 lg:px-22 top-28 text-white max-w-7xl">

@@ -28,10 +28,7 @@ export default function FaqSection() {
               className="object-cover w-full h-full"
               priority
             />
-          </div>
-
-          {/* Bottom Support Card */}
-          <div className="absolute bottom-0 right-0 w-full pl-28 ">
+                 <div className="absolute bottom-0 right-0  w-full pl-28 ">
             <div className="bg-[#2D7462] rounded-tl-2xl rounded-br-2xl p-5 flex items-start gap-4 shadow-lg">
 
               <div className="bg-white/20 w-10 h-10 flex items-center justify-center rounded-full text-white">
@@ -47,6 +44,10 @@ export default function FaqSection() {
 
             </div>
           </div>
+          </div>
+
+          {/* Bottom Support Card */}
+     
         </div>
 
         {/* RIGHT SIDE FAQ */}
