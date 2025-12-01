@@ -1,19 +1,19 @@
 export default function AboutSection() {
   return (
-    <section className="relative py-20 px-6 md:px-25 xl:px-40 bg-white overflow-hidden">
+    <section className="relative mx-w-[2700px] py-20 px-6 md:px-30  bg-white overflow-hidden">
 
       {/* Dotted Background Pattern */}
       <div className="absolute inset-0 bg-[url('/image/Abt-patternsdots.png')] opacity-80 bg-cover pointer-events-none" />
 
-      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-900 mx-auto">
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1900px] mx-auto">
 
         {/* LEFT TEXT CONTENT */}
         <div>
-          <p className="text-sm font-semibold text-gray-600 tracking-widest">
+          <p className="text-sm font-semibold  text-gray-600 tracking-widest">
             WHO WE ARE
           </p>
 
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="mt-3 text-xl md:text-4xl font-bold text-gray-900 leading-tight">
             Passionate Experts Defining Premium <br /> Living Standards.
           </h2>
 
@@ -32,11 +32,11 @@ export default function AboutSection() {
 
           {/* BUTTONS */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="px-6 py-3 bg-green-700 text-white font-semibold rounded-md shadow hover:bg-green-800 transition">
+            <button className="px-3 py-3 bg-green-700 text-xs md:text-xm text-white font-semibold rounded-md shadow hover:bg-green-800 transition">
               Explore Our Services →
             </button>
 
-            <button className="px-6 py-3 border border-green-700 text-green-700 font-semibold rounded-md hover:bg-green-50 transition">
+            <button className="px-3 py-3 border border-green-700 text-xs md:text-xm text-green-700 font-semibold rounded-md hover:bg-green-50 transition">
               Learn More →
             </button>
           </div>
