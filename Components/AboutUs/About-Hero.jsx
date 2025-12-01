@@ -4,7 +4,7 @@ export default function AboutHero() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-center bg-cover brightness-50"
-        style={{ backgroundImage: "url('/image/about-hero.png')" }}
+        style={{ backgroundImage: "url('/image/Contacts-hero.png')" }}
       />
 
       {/* Gradient overlay */}

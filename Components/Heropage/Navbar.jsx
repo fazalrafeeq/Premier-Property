@@ -12,8 +12,9 @@ export default function Navbar() {
   const menuItems = [
     { name: "Home", link: "/" },
     { name: "About Us", link: "/AboutUs" },
-    { name: "Services", link: "/services" },
-    { name: "Contact Us", link: "/contact" },
+    { name: "Services", link: "/Services" },
+    {name: "Blog",link: "/Blog"},
+    { name: "Contact Us", link: "/Contacts" },
   ];
 
   const handleMenuClick = () => {
