@@ -14,9 +14,7 @@ export default function Topbar() {
         h-10 py-1
         relative
         overflow-hidden
-        flex
-        items-center
-      "
+        flex items-center"
     >
       {/* Background Pattern Layer  */}
       <div

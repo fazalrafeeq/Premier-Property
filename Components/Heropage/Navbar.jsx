@@ -1,14 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { IoChevronDown, IoClose } from "react-icons/io5";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 
-export default function Navbar() { 
+export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const menuItems = ["Home", "About Us", "Services", "Contact Us"];
+  const menuItems = [
+    { name: "Home", link: "/" },
+    { name: "About Us", link: "/AboutUs" },
+    { name: "Services", link: "/services" },
+    { name: "Contact Us", link: "/contact" },
+  ];
 
   const handleMenuClick = () => {
     setOpen(false);
@@ -16,8 +22,6 @@ export default function Navbar() {
 
   return (
     <div className="w-full bg-white shadow-sm relative z-50">
-      
-      {/* Navbar Container */}
       <div
         className="
           relative w-full max-w-[2400px] mx-auto 
@@ -26,26 +30,28 @@ export default function Navbar() {
           h-[80px]
         "
       >
-        
         {/* Logo */}
-        <img src="/image/Navbar-bg.png" alt="Logo" className="w-28" />
+        <Link href="/">
+          <img src="/image/Navbar-bg.png" alt="Logo" className="w-28 cursor-pointer" />
+        </Link>
 
-        {/* -------- Desktop Menu -------- */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-1">
           {menuItems.map((item) => (
-            <button
-              key={item}
-              className="
-                px-5 py-2 rounded-md font-medium text-black 
-                hover:bg-[#2D7462] hover:text-white
-                transition-all duration-200 text-xs lg:text-xl 
-              "
-            >
-              {item}
-              {item === "Services" && (
-                <IoChevronDown className="inline ml-1 text-sm" />
-              )}
-            </button>
+            <Link key={item.name} href={item.link}>
+              <button
+                className="
+                  px-5 py-2 rounded-md font-medium text-black 
+                  hover:bg-[#2D7462] hover:text-white
+                  transition-all duration-200 text-xs lg:text-xl 
+                "
+              >
+                {item.name}
+                {item.name === "Services" && (
+                  <IoChevronDown className="inline ml-1 text-sm" />
+                )}
+              </button>
+            </Link>
           ))}
 
           {/* Call Section */}
@@ -60,7 +66,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* -------- Mobile Menu Icon -------- */}
+        {/* Mobile Menu Icon */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-black relative z-50"
@@ -73,30 +79,31 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* -------- Mobile Dropdown -------- */}
+      {/* Mobile Dropdown */}
       {open && (
-        <div className="
-          md:hidden 
-          absolute top-[80px] left-0 w-full 
-          bg-white shadow-xl 
-          z-40
-          px-4 py-4 space-y-3
-        ">
+        <div
+          className="
+            md:hidden 
+            absolute top-[80px] left-0 w-full 
+            bg-white shadow-xl 
+            z-40
+            px-4 py-4 space-y-3
+          "
+        >
           {menuItems.map((item) => (
-            <p
-              key={item}
-              onClick={handleMenuClick}
-              className="
-                py-2 text-black font-medium border-b px-3 rounded-md
-
-                hover:bg-[#2E7361]/10 hover:text-[#2D7462]
-                active:bg-[#2E7361]/20 active:text-[#2D7462]
-
-                transition-all duration-200
-              "
-            >
-              {item}
-            </p>
+            <Link key={item.name} href={item.link}>
+              <p
+                onClick={handleMenuClick}
+                className="
+                  py-2 text-black font-medium border-b px-3 rounded-md
+                  hover:bg-[#2E7361]/10 hover:text-[#2D7462]
+                  active:bg-[#2E7361]/20 active:text-[#2D7462]
+                  transition-all duration-200
+                "
+              >
+                {item.name}
+              </p>
+            </Link>
           ))}
 
           {/* Phone Section */}
