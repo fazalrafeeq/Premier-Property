@@ -17,7 +17,7 @@ export default function GetInTouch() {
       className="
         relative 
         min-h-screen 
-        
+       
         2xl:min-h-[30vh]
         w-full 
         py-20
@@ -25,12 +25,12 @@ export default function GetInTouch() {
       "
     >
       {/* Background Image */}
-      <div className="absolute inset-0  bg-white -z-20">
+      <div className="absolute inset-0   bg-white -z-20">
         <Image
           src="/image/get-bg-1.png"
           alt="background"
           fill
-          className="object-cover object-center w-full h-full"
+          className="object-cover hidden lg:block  object-center w-full h-full"
           priority
         />
       </div>
