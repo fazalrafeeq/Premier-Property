@@ -153,19 +153,17 @@ export default function GetInTouch() {
 function InfoCard({ icon, title, value }) {
   return (
     <div
-      tabIndex={0}
+      tabIndex={1}
       className="
         group cursor-pointer rounded-xl p-6 shadow-lg 
         bg-white text-black text-xs
-        transition-all duration-300 select-none touch-none
+        transition-all duration-300  
 
         /* Hover + Tap (ALL devices) */
-        hover:bg-[#2D7462] 
-        hover:text-white
+      
         focus:bg-[#2D7462] 
         focus:text-white
-        active:bg-[#2D7462]
-        active:text-white
+        
       "
     >
       <div className="flex items-center gap-2 mb-2">
