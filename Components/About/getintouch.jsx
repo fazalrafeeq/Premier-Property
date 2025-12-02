@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   FiMapPin,
@@ -12,35 +13,65 @@ import {
 } from "react-icons/fi";
 
 export default function GetInTouch() {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  /* SCROLL ANIMATION */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       className="
         relative 
         min-h-screen 
-       
         2xl:min-h-[30vh]
         w-full 
         py-20
         overflow-hidden
       "
     >
-      {/* Background Image */}
-      <div className="absolute inset-0   bg-white -z-20">
+      {/* Background Image (Desktop Only) */}
+      <div className="absolute inset-0 bg-white -z-20">
         <Image
           src="/image/get-bg-1.png"
           alt="background"
           fill
-          className="object-cover hidden lg:block  object-center w-full h-full"
+          className="object-cover hidden lg:block object-center w-full h-full"
           priority
         />
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white/30 -z-10"></div>
+      {/* Gradient Overlay - Desktop Only */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white/30 -z-10 hidden lg:block"></div>
 
-      {/* Content */}
-      <div className="relative max-w-[1900px] mx-auto px-7 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 z-10">
+      {/* CONTENT - With Scroll Animation */}
+      <div
+        ref={sectionRef}
+        className={`
+          relative max-w-[1900px] mx-auto px-7 md:px-20 
+          grid grid-cols-1 lg:grid-cols-2 gap-16 z-10
 
+          transition-all duration-[900ms] 
+          ease-out
+
+          ${
+            visible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }
+        `}
+      >
         {/* LEFT SIDE */}
         <div>
           <p className="uppercase text-xs md:text-sm tracking-widest text-gray-700">
@@ -57,25 +88,9 @@ export default function GetInTouch() {
 
           {/* Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-
-            <InfoCard
-              icon={<FiPhone size={22} />}
-              title="Phone Number"
-              value="+91 0000000000"
-            />
-
-            <InfoCard
-              icon={<FiMail size={22} />}
-              title="Email Address"
-              value="premium@gmail.com"
-            />
-
-            <InfoCard
-              icon={<FiMapPin size={22} />}
-              title="Location"
-              value="Lorem Ipsum is simply dummy text"
-            />
-
+            <InfoCard icon={<FiPhone size={22} />} title="Phone Number" value="+91 0000000000" />
+            <InfoCard icon={<FiMail size={22} />} title="Email Address" value="premium@gmail.com" />
+            <InfoCard icon={<FiMapPin size={22} />} title="Location" value="Lorem Ipsum is simply dummy text" />
           </div>
 
           {/* Social Icons */}
@@ -95,14 +110,12 @@ export default function GetInTouch() {
 
         {/* RIGHT FORM */}
         <div className="bg-white rounded-2xl shadow-xl p-8">
-
           <h3 className="text-xl md:text-2xl font-bold text-black">Get In Touch</h3>
           <p className="text-gray-600 text-xs md:text-sm mt-1 mb-6">
             Lorem Ipsum is simply dummy text of the printing.
           </p>
 
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
             <Input label="Your Name" placeholder="John Doe" />
             <Input label="Email Address" placeholder="johndoe@gmail.com" />
             <Input label="Phone" placeholder="+91 0000000000" />
@@ -142,58 +155,41 @@ export default function GetInTouch() {
             </button>
           </form>
         </div>
-
       </div>
     </section>
   );
 }
 
-
-/* ⭐ FINAL INFO CARD — MOBILE TAP + DESKTOP HOVER */
+/* ⭐ INFO CARD */
 function InfoCard({ icon, title, value }) {
   return (
     <div
-      tabIndex={1}
+      tabIndex={0}
       className="
         group cursor-pointer rounded-xl p-6 shadow-lg 
         bg-white text-black text-xs
         transition-all duration-300  
-
-        /* Hover + Tap (ALL devices) */
-      
-        focus:bg-[#2D7462] 
-        focus:text-white
-        
+        focus:bg-[#2D7462] focus:text-white
       "
     >
       <div className="flex items-center gap-2 mb-2">
-
-        {/* ICON */}
         <div
           className="
             flex items-center justify-center w-10 h-10 rounded-full 
             bg-gray-100 text-[#2D7462]
             transition-all
-
-            /* Hover + Tap */
-            group-hover:bg-white group-hover:text-[#2D7462]
-            group-focus:bg-white group-focus:text-[#2D7462]
-            group-active:bg-white group-active:text-[#2D7462]
           "
         >
           {icon}
         </div>
 
-        <h4 className="font-bold text-xs truncate whitespace-nowrap">
-          {title}
-        </h4>
+        <h4 className="font-bold text-xs truncate whitespace-nowrap">{title}</h4>
       </div>
 
       <p className="text-xs leading-relaxed">{value}</p>
     </div>
   );
 }
-
 
 /* SOCIAL ICON */
 function Social({ icon }) {
@@ -203,7 +199,6 @@ function Social({ icon }) {
     </div>
   );
 }
-
 
 /* INPUT FIELD */
 function Input({ label, placeholder }) {
