@@ -17,7 +17,7 @@ import Topbar from "@/Components/Heropage/Topbar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-white" >
       <Topbar/>
       <Navbar/>
       <BannerSection/>

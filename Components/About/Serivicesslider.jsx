@@ -73,7 +73,7 @@ export default function ServicesSection() {
         <button
           onClick={prev}
           disabled={index === 0}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
+          className="absolute left-5 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
         >
           <FiChevronLeft size={22} className="text-gray-400" />
         </button>
@@ -82,7 +82,7 @@ export default function ServicesSection() {
         <button
           onClick={next}
           disabled={index === totalSlides - 1}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
+          className="absolute right-5 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center disabled:opacity-40"
         >
           <FiChevronRight size={22} className="text-[#2D7462]" />
         </button>
@@ -112,9 +112,7 @@ export default function ServicesSection() {
                       ${isActive ? "bg-[#2D7462]" : "bg-white"}
                       hover:bg-[#2D7462] group
 
-                      /* ✅ VISIBLE TOP + BOTTOM SHADOW */
-                      shadow-[0_12px_35px_rgba(0,0,0,0.15)]
-                      hover:shadow-[0_18px_50px_rgba(0,0,0,0.2)]
+                     
                     `}
                   >
 
@@ -179,7 +177,7 @@ export default function ServicesSection() {
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-3.5 h-3.5 rounded-full transition ${
+              className={`w-2 h-2 rounded-full transition ${
                 index === i ? "bg-[#2D7462]" : "bg-gray-300"
               }`}
             />

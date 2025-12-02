@@ -29,7 +29,7 @@ export default function BlogSection() {
   ];
 
   return (
-    <section className="w-full px-6 md:px-20 max-w-[2700px] py-20 bg-white">
+    <section className="w-full px-6 md:px-20 max-w-[2900px] py-20 bg-white">
       {/* TITLE */}
       <div className="text-center max-w-2xl mx-auto px-4">
         <p className="text-xs md:text-sm tracking-wide text-gray-500 font-semibold">

@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section className="w-full flex justify-center bg-white">
-      <div className="w-full max-w-[2200px] px-8 md:px-16 lg:px-24 xl:px-28 bg-white pb-32  py-20">
+      <div className="w-full max-w-[1700px] px-8 md:px-16 lg:px-24 xl:px-28 bg-white pb-32  py-5">
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -69,13 +69,14 @@ export default function About() {
               alt="Cleaning worker"
               className="
                 w-full 
+                max-w-[980px]
                 rounded-2xl 
                 object-cover
-                min-h-[350px]
+                min-h-[250px]
                 sm:min-h-[400px]
-                md:min-h-[450px]
-                lg:min-h-[480px]
-                xl:min-h-[500px]
+                md:min-h-[90px]
+                lg:min-h-[450px]
+                xl:min-h-[150px]
               "
             />
 
