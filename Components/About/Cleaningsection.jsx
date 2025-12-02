@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function CleaningSection() {
   const stats = [
-    { number: "208K", label: "Lorem " },
-    { number: "208K", label: "Lorem " },
-    { number: "4.8", label: "Lorem ", stars: true },
-    { number: "208K", label: "Lorem " },
-    { number: "208K", label: "Lorem " },
+    { number: "208K", label: "Instagram " },
+    { number: "506K", label: "Youtube" },
+    { number: "4.8", label: "Google ", stars: true },
+    { number: "300K", label: "Facebook" },
+    { number: "111K", label: "Twitter" },
   ];
 
   return (
@@ -66,7 +66,7 @@ export default function CleaningSection() {
                 )}
 
                 {/* LABEL */}
-                <p className="text-gray-500 text-xs text-center">
+                <p className="text-gray-500 text-xs md:text-xm font-bold text-center">
                   {item.label}
                 </p>
               </div>

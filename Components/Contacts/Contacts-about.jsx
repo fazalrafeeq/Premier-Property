@@ -19,8 +19,8 @@ export default function ContactSection() {
               CONTACT US
             </p>
 
-            <h2 className="text-xl md:text-5xl font-bold leading-snug">
-              We Value Your Queries And <br /> Feedback
+            <h2 className="text-xl text-black md:text-5xl font-bold leading-snug">
+              We Value Your Queries And  Feedback
             </h2>
 
             <p className="text-gray-600 text-xs md:text-lg leading-relaxed max-w-[90%]">

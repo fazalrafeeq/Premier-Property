@@ -13,7 +13,7 @@ export  default function Contacts(){
             <ContactsHero/>
             <ContactSection/>
             <MapSection/>
-            <Footer/>
+            <Footer/> 
         </div>
     )
 }
