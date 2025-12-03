@@ -11,11 +11,11 @@ export default function About() {
               ABOUT US
             </p>
 
-            <h1 className="text-2xl md:text-3xl xl:text-[38px] text-black font-bold leading-tight mt-3">
+            <h1 className="text-2xl md:text-2xl xl:text-[38px] text-black font-bold leading-tight mt-3">
               Explore Real Estate In Popular Indian Cities
             </h1>
 
-            <p className="mt-6 text-gray-600 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed max-w-2xl">
+            <p className="mt-6 text-gray-600 text-[13px] md:text-[14px] lg:text-[16px] leading-relaxed max-w-2xl">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -28,9 +28,9 @@ export default function About() {
               <div>
                 <div className="flex items-center gap-3">
                   <img src="/image/abt-icon-1.png" className="w-6 h-6" />
-                  <h3 className="font-semibold text-black text-sm sm:text-xl">Best Solutions</h3>
+                  <h3 className="font-semibold text-black text-[18px]  sm:text-xl">Best Solutions</h3>
                 </div>
-                <p className="text-gray-600 mt-3 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed">
+                <p className="text-gray-600 mt-3 text-[13px] md:text-[14px] lg:text-[16px] leading-relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>
@@ -39,9 +39,9 @@ export default function About() {
               <div>
                 <div className="flex items-center gap-3">
                   <img src="/image/abt-icon-2.png" className="w-6 h-6" />
-                  <h3 className="font-semibold text-black text-sm sm:text-xl ">Quality Service</h3>
+                  <h3 className="font-semibold text-black text-[18px] sm:text-xl ">Quality Service</h3>
                 </div>
-                <p className="text-gray-600 mt-3 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed">
+                <p className="text-gray-600 mt-3 text-[13px] md:text-[14px] lg:text-[16px] leading-relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p>
               </div>

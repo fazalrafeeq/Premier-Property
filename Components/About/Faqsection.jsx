@@ -32,13 +32,13 @@ export default function FaqSection() {
             <div className="absolute bottom-0 right-0 w-full pl-28">
               <div className="bg-[#2D7462] rounded-tl-2xl rounded-br-2xl p-5 flex items-start gap-4 shadow-lg">
 
-                <div className="bg-white/20 w-10 h-10 flex items-center justify-center rounded-full text-white">
+                <div className="bg-white/20 w-12 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-white">
                   <FiHeadphones size={20} />
                 </div>
 
                 <div>
-                  <h3 className="text-white text-lg font-semibold">24/7 Support</h3>
-                  <p className="text-white/80 text-sm">
+                  <h3 className="text-white text-xm md:text-lg font-semibold">24/7 Support</h3>
+                  <p className="text-white/80 text-xs md:text-sm">
                     Have any questions? Contact Us!
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export default function FaqSection() {
               answer="You can reach our support team anytime using live chat, phone, or email — available 24/7."
             />
 
-            <FAQItem
+            <FAQItem  
               question="Can I schedule a site visit?"
               answer="Yes, you can book appointments through the website or by contacting our support team."
             />
